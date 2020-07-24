@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GameComponent } from './components/game/game.component';
+import { SelectorComponent } from './components/selector/selector.component';
+import { SelectorHandComponent } from './components/selector-hand/selector-hand.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameComponent,
+    SelectorComponent,
+    SelectorHandComponent
   ],
   imports: [
     BrowserModule,
