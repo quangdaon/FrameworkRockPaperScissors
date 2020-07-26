@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import hands, { Hand } from 'src/data/hands';
+import hands, { Hand } from '../../data/hands';
 
 @Component({
   selector: 'app-selector',
@@ -13,6 +13,10 @@ export class SelectorComponent implements OnInit {
 
   ngOnInit(): void {
     this.options = Object.values(hands);
+  }
+
+  handSelected(hand: Hand): void {
+    console.log(`Selected:`, hand.name);
   }
 
 }
