@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './components/game/game.component';
 import { SelectorComponent } from './components/selector/selector.component';
 import { SelectorHandComponent } from './components/selector-hand/selector-hand.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
     SelectorComponent,
-    SelectorHandComponent
+    SelectorHandComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

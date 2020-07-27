@@ -1,0 +1,40 @@
+.history {
+  text-align: center;
+  margin-bottom: 2em;
+  
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    width: 600px;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  &-header {
+    &-label {
+      display: inline-block;
+    }
+    &-score {
+      display: inline-block;
+      margin-left: 0.5em;
+    }
+  }
+
+  &-hand {
+    font-size: 3em;
+    opacity: 0.25;
+    &.winner {
+      opacity: 1;
+    }
+  }
+
+  &-more {
+    font-size: 4em;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+
+}

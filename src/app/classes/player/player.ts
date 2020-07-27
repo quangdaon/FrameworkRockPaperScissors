@@ -1,6 +1,6 @@
 import { Hand } from '../../helpers/hands';
 
-type WinStatus = 'waiting' | 'win' | 'lose' | 'draw';
+export type WinStatus = 'waiting' | 'win' | 'lose' | 'draw';
 
 export class Player {
   selected: Hand;

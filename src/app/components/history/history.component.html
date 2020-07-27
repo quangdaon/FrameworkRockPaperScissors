@@ -1,0 +1,19 @@
+<div class="history" *ngIf="history.length">
+  <div class="history-grid">
+    <div class="history-header">
+      <h2 class="history-header-label">You</h2>
+      <div class="history-header-score">{{ getScore('win') }}</div>
+    </div>
+    <div class="history-header-vs"></div>
+    <div class="history-header">
+      <h2 class="history-header-label">Opponent</h2>
+      <div class="history-header-score">{{ getScore('lose') }}</div>
+    </div>
+    <ng-container *ngFor="let item of getVisibleItems()">
+      <div [ngClass]="getClasses(item)">{{ item.player.emoji }}</div>
+      <div class="history-vs"></div>
+      <div [ngClass]="getClasses(item, true)">{{ item.opponent.emoji }}</div>
+    </ng-container>
+  </div>
+  <button class="history-more" title="Show More" (click)="increaseVisibileCount()" *ngIf="visibleItemsCount < history.length">...</button>
+</div>

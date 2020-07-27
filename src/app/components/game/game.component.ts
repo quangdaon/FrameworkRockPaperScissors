@@ -3,7 +3,7 @@ import { Player } from '../../classes/player/player';
 import { randomFromArray } from '../../helpers/helpers';
 import hands from 'src/app/helpers/hands';
 import { SelectorComponent } from '../selector/selector.component';
-import { TitleCasePipe } from '@angular/common';
+import { History, HistoryItem } from '../../helpers/history';
 
 @Component({
   selector: 'app-game',
@@ -16,6 +16,7 @@ export class GameComponent implements OnInit {
   private player: Player;
   private opponent: Player;
   result: string = '';
+  history: History = [];
 
   constructor() {
     this.player = new Player();
@@ -53,6 +54,14 @@ export class GameComponent implements OnInit {
       case 'lose':
         this.result = `${selection}. You lose!`;
         break;
+      default:
+        return;
     }
+
+    this.history.push({
+      player: this.player.selected,
+      opponent: this.opponent.selected,
+      status: result
+    });
   }
 }
