@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import hands, { Hand } from '../../helpers/hands';
 
 @Component({
@@ -10,13 +10,15 @@ export class SelectorComponent implements OnInit {
   options: Hand[];
   selected: Hand;
 
+  @Output() selection: EventEmitter<Hand> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
     this.options = Object.values(hands);
   }
 
-  handSelected(hand: Hand): void {
+  selectHand(hand: Hand): void {
     this.selected = hand;
   }
 

@@ -10,7 +10,7 @@ export class SelectorHandComponent implements OnInit {
   @Input() hand: Hand;
   @Input() disabled: boolean;
   @Input() selected: boolean;
-  @Output() handSelected: EventEmitter<Hand> = new EventEmitter();
+  @Output() selection: EventEmitter<Hand> = new EventEmitter();
 
   constructor() { }
 
@@ -19,7 +19,7 @@ export class SelectorHandComponent implements OnInit {
 
   selectHand() {
     if (this.disabled || this.selected) return;
-    this.handSelected.emit(this.hand);
+    this.selection.emit(this.hand);
   }
 
   getClasses() {
