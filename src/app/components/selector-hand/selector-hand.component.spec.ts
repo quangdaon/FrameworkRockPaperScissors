@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectorHandComponent } from './selector-hand.component';
 import { Component } from '@angular/core';
-import hands, { Hand } from 'src/app/data/hands';
+import hands, { Hand } from 'src/app/helpers/hands';
 
 describe('SelectorHandComponent', () => {
   let component: TestHostComponent;

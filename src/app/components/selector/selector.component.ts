@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import hands, { Hand } from '../../data/hands';
+import hands, { Hand } from '../../helpers/hands';
 
 @Component({
   selector: 'app-selector',
