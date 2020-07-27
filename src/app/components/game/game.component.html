@@ -1,3 +1,6 @@
 <div>
-  <app-selector></app-selector>
+  <app-selector (selection)="playerSelected($event)"></app-selector>
+  <div class="result">
+    <p>{{ result }}</p>
+  </div>
 </div>

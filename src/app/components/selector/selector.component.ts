@@ -20,6 +20,7 @@ export class SelectorComponent implements OnInit {
 
   selectHand(hand: Hand): void {
     this.selected = hand;
+    this.selection.emit(hand);
   }
 
   isSelected(hand) {

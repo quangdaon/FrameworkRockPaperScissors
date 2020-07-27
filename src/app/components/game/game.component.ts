@@ -11,15 +11,36 @@ import hands from 'src/app/helpers/hands';
 export class GameComponent implements OnInit {
   private player: Player;
   private opponent: Player;
+  result: string;
 
-  constructor() { 
+  constructor() {
     this.player = new Player();
     this.opponent = new Player();
-
   }
-  
+
   ngOnInit(): void {
     this.opponent.select(randomFromArray(Object.values(hands)));
   }
 
+  playerSelected(hand) {
+    this.player.select(hand);
+
+    this.compareResults();
+  }
+  compareResults() {
+    const result = this.player.compete(this.opponent)
+    const selection = `Opponent selected ${this.opponent.selected.emoji}`;
+
+    switch (result) {
+      case 'draw':
+        this.result = `${selection}. It's a draw!`
+        break;
+      case 'win':
+        this.result = `${selection}. You win!`;
+        break;
+      case 'draw':
+        this.result = `${selection}. You lose!`;
+        break;
+    }
+  }
 }
