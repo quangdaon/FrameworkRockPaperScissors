@@ -15,7 +15,7 @@ export class GameComponent implements OnInit {
 
   private player: Player;
   private opponent: Player;
-  result: string;
+  result: string = '';
 
   constructor() {
     this.player = new Player();
@@ -50,7 +50,7 @@ export class GameComponent implements OnInit {
       case 'win':
         this.result = `${selection}. You win!`;
         break;
-      case 'draw':
+      case 'lose':
         this.result = `${selection}. You lose!`;
         break;
     }
