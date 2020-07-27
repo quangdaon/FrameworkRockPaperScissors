@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Hand } from '../../data/hands';
+import { Hand, SelectableHand } from '../../data/hands';
 
 @Component({
   selector: 'app-selector-hand',
@@ -7,7 +7,7 @@ import { Hand } from '../../data/hands';
   styleUrls: ['./selector-hand.component.scss']
 })
 export class SelectorHandComponent implements OnInit {
-  @Input() hand: Hand
+  @Input() hand: SelectableHand
   @Output() handSelected: EventEmitter<Hand> = new EventEmitter();
 
   constructor() { }

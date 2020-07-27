@@ -10,31 +10,28 @@ export interface Hand {
   name: HandString;
   emoji: Emoji;
   beats: HandString;
+};
+
+export interface SelectableHand extends Hand {
   disabled: boolean;
   selected: boolean;
-};
+}
 
 const hands: { [key in HandString]: Hand } = {
   rock: {
     name: 'rock',
     beats: 'scissors',
-    emoji: Emoji.Rock,
-    disabled: false,
-    selected: false
+    emoji: Emoji.Rock
   },
   paper: {
     name: 'paper',
     beats: 'rock',
-    emoji: Emoji.Paper,
-    disabled: false,
-    selected: false
+    emoji: Emoji.Paper
   },
   scissors: {
     name: 'scissors',
     beats: 'paper',
-    emoji: Emoji.Scissors,
-    disabled: false,
-    selected: false
+    emoji: Emoji.Scissors
   }
 };
 

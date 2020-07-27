@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import hands, { Hand } from '../../data/hands';
+import hands, { Hand, SelectableHand } from '../../data/hands';
 
 @Component({
   selector: 'app-selector',
@@ -7,13 +7,18 @@ import hands, { Hand } from '../../data/hands';
   styleUrls: ['./selector.component.scss']
 })
 export class SelectorComponent implements OnInit {
-  options: Hand[];
+  options: SelectableHand[];
   selected: Hand;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.options = Object.values(hands);
+    this.options = Object.values(hands).map(h => {
+      const hand: SelectableHand = <SelectableHand>h;
+      hand.disabled = false;
+      hand.selected = false;
+      return hand;
+    });
   }
 
   handSelected(hand: Hand): void {
