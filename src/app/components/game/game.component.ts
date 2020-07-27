@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Player } from '../../classes/player/player';
 import { randomFromArray } from '../../helpers/helpers';
 import hands from 'src/app/helpers/hands';
+import { SelectorComponent } from '../selector/selector.component';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-game',
@@ -9,6 +11,8 @@ import hands from 'src/app/helpers/hands';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
+  @ViewChild(SelectorComponent) selector: SelectorComponent;
+
   private player: Player;
   private opponent: Player;
   result: string;
@@ -24,9 +28,17 @@ export class GameComponent implements OnInit {
 
   playerSelected(hand) {
     this.player.select(hand);
-
     this.compareResults();
   }
+
+  reset() {
+    this.player = new Player();
+    this.opponent = new Player();
+    this.opponent.select(randomFromArray(Object.values(hands)));
+    this.result = '';
+    this.selector.reset();
+  }
+
   compareResults() {
     const result = this.player.compete(this.opponent)
     const selection = `Opponent selected ${this.opponent.selected.emoji}`;

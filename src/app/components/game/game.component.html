@@ -1,6 +1,7 @@
 <div>
   <app-selector (selection)="playerSelected($event)"></app-selector>
-  <div class="result">
+  <div class="result" *ngIf="!!result">
     <p>{{ result }}</p>
+    <button (click)="reset()">Reset</button>
   </div>
 </div>

@@ -18,6 +18,10 @@ export class SelectorComponent implements OnInit {
     this.options = Object.values(hands);
   }
 
+  reset() {
+    this.selected = null;
+  }
+
   selectHand(hand: Hand): void {
     this.selected = hand;
     this.selection.emit(hand);
