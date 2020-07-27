@@ -12,11 +12,6 @@ export interface Hand {
   beats: HandString;
 };
 
-export interface SelectableHand extends Hand {
-  disabled: boolean;
-  selected: boolean;
-}
-
 const hands: { [key in HandString]: Hand } = {
   rock: {
     name: 'rock',

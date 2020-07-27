@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Hand, SelectableHand } from '../../data/hands';
+import { Hand } from '../../data/hands';
 
 @Component({
   selector: 'app-selector-hand',
@@ -7,7 +7,9 @@ import { Hand, SelectableHand } from '../../data/hands';
   styleUrls: ['./selector-hand.component.scss']
 })
 export class SelectorHandComponent implements OnInit {
-  @Input() hand: SelectableHand
+  @Input() hand: Hand
+  @Input() disabled: boolean
+  @Input() selected: boolean
   @Output() handSelected: EventEmitter<Hand> = new EventEmitter();
 
   constructor() { }
@@ -16,15 +18,15 @@ export class SelectorHandComponent implements OnInit {
   }
 
   selectHand() {
-    if (this.hand.disabled || this.hand.selected) return;
+    if (this.disabled || this.selected) return;
     this.handSelected.emit(this.hand);
   }
 
   getClasses() {
     const obj = {
       'selector-hand': true,
-      disabled: this.hand.disabled,
-      selected: this.hand.selected
+      disabled: this.disabled,
+      selected: this.selected
     }
 
     obj[`selector-hand-${this.hand.name}`] = true;

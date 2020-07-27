@@ -1,3 +1,9 @@
 <div class="selector">
-  <app-selector-hand *ngFor="let hand of options" [hand]="hand" (handSelected)="handSelected($event)"></app-selector-hand>
+  <app-selector-hand 
+    *ngFor="let hand of options"
+    [hand]="hand"
+    [disabled]="isDisabled(hand)"
+    [selected]="isSelected(hand)"
+    (handSelected)="handSelected($event)">
+  </app-selector-hand>
 </div>
