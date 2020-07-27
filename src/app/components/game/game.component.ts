@@ -17,6 +17,7 @@ export class GameComponent implements OnInit {
   private opponent: Player;
   result: string = '';
   history: History = [];
+  slow: boolean = false;
 
   constructor() {
     this.player = new Player();
@@ -24,11 +25,11 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.opponent.select(randomFromArray(Object.values(hands)));
   }
-
+  
   playerSelected(hand) {
     this.player.select(hand);
+    this.opponent.select(randomFromArray(Object.values(hands)));
     this.compareResults();
   }
 

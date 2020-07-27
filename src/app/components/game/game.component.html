@@ -1,5 +1,5 @@
 <div>
-  <app-selector (selection)="playerSelected($event)"></app-selector>
+  <app-selector [slow]="slow" (selection)="playerSelected($event)"></app-selector>
   <div class="result" *ngIf="!!result">
     <p>{{ result }}</p>
     <button (click)="reset()">Reset</button>

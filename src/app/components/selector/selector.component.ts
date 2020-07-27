@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import hands, { Hand } from '../../helpers/hands';
 
 @Component({
@@ -9,6 +9,8 @@ import hands, { Hand } from '../../helpers/hands';
 export class SelectorComponent implements OnInit {
   options: Hand[];
   selected: Hand;
+
+  @Input() slow: boolean;
 
   @Output() selection: EventEmitter<Hand> = new EventEmitter();
 
@@ -28,10 +30,10 @@ export class SelectorComponent implements OnInit {
   }
 
   isSelected(hand) {
-    return this.selected && this.selected === hand;
+    return this.slow && this.selected && this.selected === hand;
   }
 
   isDisabled(hand) {
-    return this.selected && this.selected !== hand;
+    return this.slow && this.selected && this.selected !== hand;
   }
 }
