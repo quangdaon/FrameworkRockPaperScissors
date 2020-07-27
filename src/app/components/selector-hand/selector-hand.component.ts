@@ -16,7 +16,20 @@ export class SelectorHandComponent implements OnInit {
   }
 
   selectHand() {
+    if (this.hand.disabled || this.hand.selected) return;
     this.handSelected.emit(this.hand);
+  }
+
+  getClasses() {
+    const obj = {
+      'selector-hand': true,
+      disabled: this.hand.disabled,
+      selected: this.hand.selected
+    }
+
+    obj[`selector-hand-${this.hand.name}`] = true;
+
+    return obj;
   }
 
 }

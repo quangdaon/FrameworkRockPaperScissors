@@ -1,4 +1,4 @@
-<div class="selector-hand">
+<div [ngClass]="getClasses()">
   <button class="selector-hand-button" (click)="selectHand()">
     <div class="selector-hand-emoji">{{ hand.emoji }}</div>
   </button>

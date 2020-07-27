@@ -1,4 +1,6 @@
 .selector {
-  display: flex;
-  justify-content: center;
+  display: block;
+  width: max-content;
+  margin: auto;
+  position: relative;
 }

@@ -8,6 +8,7 @@ import hands, { Hand } from '../../data/hands';
 })
 export class SelectorComponent implements OnInit {
   options: Hand[];
+  selected: Hand;
 
   constructor() { }
 
@@ -16,7 +17,14 @@ export class SelectorComponent implements OnInit {
   }
 
   handSelected(hand: Hand): void {
-    console.log(`Selected:`, hand.name);
+    this.selected = hand;
+
+    this.options.forEach(h => {
+      h.selected = h === this.selected;
+      h.disabled = h !== this.selected;
+    });
+
+    console.log(this.selected);
   }
 
 }
