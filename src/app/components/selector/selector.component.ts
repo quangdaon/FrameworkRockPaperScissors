@@ -30,10 +30,10 @@ export class SelectorComponent implements OnInit {
   }
 
   isSelected(hand) {
-    return this.slow && this.selected && this.selected === hand;
+    return this.slow && !!this.selected && this.selected === hand;
   }
 
   isDisabled(hand) {
-    return this.slow && this.selected && this.selected !== hand;
+    return this.slow && !!this.selected && this.selected !== hand;
   }
 }
