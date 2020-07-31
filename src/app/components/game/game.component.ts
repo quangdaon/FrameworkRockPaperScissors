@@ -17,7 +17,7 @@ export class GameComponent implements OnInit {
   private opponent: Player;
   result: string = '';
   history: History = [];
-  slow: boolean = false;
+  slow: boolean = true;
 
   constructor() {
     this.player = new Player();
