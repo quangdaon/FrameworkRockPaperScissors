@@ -13,7 +13,7 @@ describe('Player class', () => {
   });
 
   it('should not have a hand', () => {
-    expect(player.selected).toBeUndefined();
+    expect(player.selected).toBeNull();
   });
 
   it('should allow selection', () => {

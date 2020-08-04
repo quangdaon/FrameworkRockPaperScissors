@@ -3,7 +3,7 @@ import { Hand } from '../../helpers/hands';
 export type WinStatus = 'waiting' | 'win' | 'lose' | 'draw';
 
 export class Player {
-  selected: Hand;
+  selected: Hand = null;
 
   select(hand: Hand) {
     this.selected = hand;
