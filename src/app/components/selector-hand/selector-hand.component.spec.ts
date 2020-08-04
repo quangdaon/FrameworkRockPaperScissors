@@ -7,7 +7,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 describe('SelectorHandComponent', () => {
   let component: SelectorHandComponent;
   let fixture: ComponentFixture<SelectorHandComponent>;
-  let root: HTMLElement;
   const hand: Hand = hands.rock;
 
   beforeEach(async(() => {
@@ -22,11 +21,11 @@ describe('SelectorHandComponent', () => {
     fixture = TestBed.createComponent(SelectorHandComponent);
     component = fixture.componentInstance;
     component.hand = hand;
+    component.disabled = false;
+    component.selected = false;
     fixture.detectChanges();
 
     spyOn(component.selection, 'emit');
-
-    root = fixture.nativeElement.querySelector('div:first-child');
   });
 
   it('should create', () => {
@@ -54,30 +53,34 @@ describe('SelectorHandComponent', () => {
 
   describe('classes', () => {
     it('should have "select-hand" and "selector-hand-{type}" by default', () => {
-      expect(root.classList.contains('selector-hand')).toBeTrue();
-      expect(root.classList.contains('selector-hand-rock')).toBeTrue();
+      const classes = component.getClasses();
+
+      expect(classes['selector-hand']).toBeTrue();
+      expect(classes['selector-hand-rock']).toBeTrue();
     });
 
     it('should not have "disabled" by default', () => {
-      expect(root.classList.contains('disabled')).toBeFalse();
+      const classes = component.getClasses();
+      expect(classes['disabled']).toBeFalse();
     });
 
     it('should not have "selected" by default', () => {
-      expect(root.classList.contains('selected')).toBeFalse();
+      const classes = component.getClasses();
+      expect(classes['selected']).toBeFalse();
     });
 
     it('should have "disabled" when component is disabled', () => {
       component.disabled = true;
-      fixture.detectChanges();
+      const classes = component.getClasses();
 
-      expect(root.classList.contains('disabled')).toBeTrue();
+      expect(classes['disabled']).toBeTrue();
     });
 
     it('should have "selected" when component is selected', () => {
       component.selected = true;
-      fixture.detectChanges();
+      const classes = component.getClasses();
 
-      expect(root.classList.contains('selected')).toBeTrue();
+      expect(classes['selected']).toBeTrue();
     });
   });
 });
