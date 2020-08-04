@@ -16,21 +16,13 @@ export class HistoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getClasses(item: HistoryItem, isOpponent: string): object {
+  getHandClasses(item: HistoryItem, isOpponent: boolean = false): object {
     const classes = {
-      'history-hand': true
+      'history-hand': true,
+      'history-player': !isOpponent,
+      'history-opponent': isOpponent,
+      'history-winner': (!isOpponent && item.status === 'win') || (isOpponent && item.status === 'lose')
     };
-
-    const playerClass = isOpponent ? 'opponent' : 'player';
-
-    classes[`history-${playerClass}`] = true;
-
-    if (
-      (!isOpponent && item.status === 'win') ||
-      (isOpponent && item.status === 'lose')
-    ) {
-      classes['winner'] = true;
-    }
 
     return classes;
   }
@@ -43,7 +35,7 @@ export class HistoryComponent implements OnInit {
     return this.history.reverse().slice(0, this.visibleItemsCount);
   }
 
-  increaseVisibileCount(): void {
+  increaseVisibleCount(): void {
     this.visibleItemsCount += 5;
   }
 

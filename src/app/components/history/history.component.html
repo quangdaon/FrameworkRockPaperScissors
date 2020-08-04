@@ -10,10 +10,10 @@
       <div class="history-header-score">{{ getScore('lose') }}</div>
     </div>
     <ng-container *ngFor="let item of getVisibleItems(); let i = index">
-      <div [ngClass]="getClasses(item)">{{ item.player.emoji }}</div>
+      <div [ngClass]="getHandClasses(item)">{{ item.player.emoji }}</div>
       <div class="history-round">Round {{ history.length - i }}</div>
-      <div [ngClass]="getClasses(item, true)">{{ item.opponent.emoji }}</div>
+      <div [ngClass]="getHandClasses(item, true)">{{ item.opponent.emoji }}</div>
     </ng-container>
   </div>
-  <button class="history-more" title="Show More" (click)="increaseVisibileCount()" *ngIf="visibleItemsCount < history.length">...</button>
+  <button class="history-more" title="Show More" (click)="increaseVisibleCount()" *ngIf="visibleItemsCount < history.length">...</button>
 </div>
