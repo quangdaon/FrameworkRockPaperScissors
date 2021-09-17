@@ -1,5 +1,5 @@
 import { Player } from './player';
-import hands from 'src/app/helpers/hands';
+import hands from '../../helpers/hands';
 
 describe('Player class', () => {
   let player: Player;
