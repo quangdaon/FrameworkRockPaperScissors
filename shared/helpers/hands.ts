@@ -2,7 +2,7 @@ export enum Emoji {
   Rock = '✊',
   Paper = '✋',
   Scissors = '✌'
-};
+}
 
 export type HandString = 'rock' | 'paper' | 'scissors';
 
@@ -10,7 +10,7 @@ export interface Hand {
   name: HandString;
   emoji: Emoji;
   beats: HandString;
-};
+}
 
 const hands: { [key in HandString]: Hand } = {
   rock: {

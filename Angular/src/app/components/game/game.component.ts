@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Player } from '@shared/classes/player/player';
-import { randomFromArray } from '../../../../../shared/helpers/helpers';
+import { randomFromArray } from '@shared/helpers/helpers';
 import hands from '@shared/helpers/hands';
 import { SelectorComponent } from '../selector/selector.component';
-import { History, HistoryItem } from '../../../../../shared/helpers/history';
+import { History } from '@shared/helpers/history';
 
 @Component({
   selector: 'app-game',
