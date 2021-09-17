@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { History, HistoryItem } from 'src/app/helpers/history';
-import { WinStatus } from '../../classes/player/player';
+import { History, HistoryItem } from '@shared/helpers/history';
+import { WinStatus } from '@shared/classes/player/player';
 
 @Component({
   selector: 'app-history',

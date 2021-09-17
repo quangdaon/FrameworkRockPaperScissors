@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Player } from '../../classes/player/player';
-import { randomFromArray } from '../../helpers/helpers';
-import hands from 'src/app/helpers/hands';
+import { Player } from '@shared/classes/player/player';
+import { randomFromArray } from '../../../../../shared/helpers/helpers';
+import hands from '@shared/helpers/hands';
 import { SelectorComponent } from '../selector/selector.component';
-import { History, HistoryItem } from '../../helpers/history';
+import { History, HistoryItem } from '../../../../../shared/helpers/history';
 
 @Component({
   selector: 'app-game',
@@ -26,7 +26,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   playerSelected(hand) {
     this.player.select(hand);
     this.opponent.select(randomFromArray(Object.values(hands)));

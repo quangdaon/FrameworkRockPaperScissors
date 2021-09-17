@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectorHandComponent } from './selector-hand.component';
-import hands, { Hand } from 'src/app/helpers/hands';
+import hands, { Hand } from '@shared/helpers/hands';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('SelectorHandComponent', () => {

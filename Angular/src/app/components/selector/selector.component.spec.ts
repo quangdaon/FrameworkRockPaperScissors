@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectorComponent } from './selector.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import hands from 'src/app/helpers/hands';
+import hands from '@shared/helpers/hands';
 
 describe('SelectorComponent', () => {
   let component: SelectorComponent;

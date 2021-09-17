@@ -1,5 +1,5 @@
-import hands from 'src/app/helpers/hands';
-import { History } from 'src/app/helpers/history';
+import hands from '@shared/helpers/hands';
+import { History } from '@shared/helpers/history';
 
 export default (): History => ([
   {

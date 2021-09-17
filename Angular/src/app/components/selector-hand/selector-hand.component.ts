@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Hand } from '../../helpers/hands';
+import { Hand } from '../../../../../shared/helpers/hands';
 
 @Component({
   selector: 'app-selector-hand',

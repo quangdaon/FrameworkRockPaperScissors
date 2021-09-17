@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HistoryComponent } from './history.component';
-import { History, HistoryItem } from 'src/app/helpers/history';
+import { History, HistoryItem } from '@shared/helpers/history';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import hands from 'src/app/helpers/hands';
+import hands from '@shared/helpers/hands';
 import seedHistory from './history.component.seed';
 
 
